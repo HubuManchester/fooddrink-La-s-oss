@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FootNutriScan.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:FootNutriScan.Pages">
+
+    <TabBar>
+
+        <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate pages:HomePage}" />
+
+        <ShellContent
+        Title="Search"
+        ContentTemplate="{DataTemplate pages:SearchPage}" />
+
+        <ShellContent
+        Title="Scan"
+        ContentTemplate="{DataTemplate pages:ScanPage}" />
+
+        <ShellContent
+        Title="Meal Plan"
+        ContentTemplate="{DataTemplate pages:MealPlanPage}" />
+
+        <ShellContent
+        Title="Settings"
+        ContentTemplate="{DataTemplate pages:SettingsPage}" />
+
+    </TabBar>
+
+</Shell>

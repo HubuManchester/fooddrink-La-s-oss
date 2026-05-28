@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FootNutriScan.Pages.ScanPage"
+    Title="Scan">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <Label
+            Text="Food Scanner"
+            FontSize="30"
+            FontAttributes="Bold"/>
+
+        <Button
+            Text="Scan Food"
+            Clicked="OnScanClicked"
+            BackgroundColor="#4CAF50"
+            TextColor="White"
+            HeightRequest="60"
+            CornerRadius="15"/>
+
+        <Frame
+            BackgroundColor="#EEEEEE"
+            HeightRequest="300"
+            CornerRadius="20">
+
+            <Label
+                Text="Camera Preview Area"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+        </Frame>
+
+    </VerticalStackLayout>
+
+</ContentPage>

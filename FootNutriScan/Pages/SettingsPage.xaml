@@ -3,28 +3,59 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FootNutriScan.Pages.SettingsPage"
-    Title="Settings">
+    Title="Settings"
+    BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#1E1E1E}">
 
-    <VerticalStackLayout Padding="20" Spacing="20">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
 
-        <Label
-            Text="Settings"
-            FontSize="30"
-            FontAttributes="Bold"/>
+            <Label
+                Text="Settings"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                AutomationProperties.Name="Settings title" />
 
-        <Label
-            Text="Dark Mode"/>
+            <Frame
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}"
+                CornerRadius="15"
+                Padding="15">
+                <HorizontalStackLayout Spacing="20">
+                    <Label
+                        Text="Dark Mode"
+                        VerticalOptions="Center"
+                        TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                        AutomationProperties.Name="Dark mode toggle" />
+                    <Switch
+                        x:Name="DarkModeSwitch"
+                        Toggled="OnDarkModeToggled"
+                        OnColor="#4CAF50" />
+                </HorizontalStackLayout>
+            </Frame>
 
-        <Switch/>
+            <Frame
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}"
+                CornerRadius="15"
+                Padding="15">
+                <VerticalStackLayout>
+                    <Label
+                        Text="Large Text (Simulated)"
+                        TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                    <Slider
+                        x:Name="FontSizeSlider"
+                        Minimum="14"
+                        Maximum="28"
+                        Value="18"
+                        AutomationProperties.Name="Adjust font size" />
+                    <Label
+                        x:Name="SampleTextLabel"
+                        Text="This is sample text"
+                        FontSize="18"
+                        TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                </VerticalStackLayout>
+            </Frame>
 
-        <Label
-            Text="Large Text"/>
-
-        <Slider
-            Minimum="12"
-            Maximum="30"
-            Value="18"/>
-
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>

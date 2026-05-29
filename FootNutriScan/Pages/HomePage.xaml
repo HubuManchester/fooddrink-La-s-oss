@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FootNutriScan.Pages.HomePage"
     Title="Home"
-    BackgroundColor="#F5F5F5">
+    BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#1E1E1E}">
 
     <ScrollView>
 
@@ -14,7 +14,8 @@
                 Text="FootNutriScan"
                 FontSize="32"
                 FontAttributes="Bold"
-                TextColor="Black" />
+                TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                AutomationProperties.Name="Application title, FootNutriScan" />
 
             <Frame
                 CornerRadius="20"
@@ -27,7 +28,8 @@
                         Text="Welcome Back!"
                         FontSize="24"
                         FontAttributes="Bold"
-                        TextColor="White" />
+                        TextColor="White"
+                        AutomationProperties.Name="Welcome message" />
 
                     <Label
                         Text="Track your nutrition easily."
@@ -40,7 +42,7 @@
 
             <Frame
                 CornerRadius="20"
-                BackgroundColor="White"
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}"
                 Padding="20">
 
                 <VerticalStackLayout>
@@ -49,9 +51,11 @@
                         Text="Today's Calories"
                         FontSize="20"
                         FontAttributes="Bold"
-                        TextColor="Black" />
+                        TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                        AutomationProperties.Name="Today's total calories" />
 
                     <Label
+                        x:Name="CaloriesTodayLabel"
                         Text="1450 kcal"
                         FontSize="40"
                         FontAttributes="Bold"

@@ -1,15 +1,13 @@
+using SQLite;
+
 namespace FootNutriScan.Models;
 
-public class FoodItem : ContentPage
+public class FoodItem
 {
-	public FoodItem()
-	{
-		Content = new VerticalStackLayout
-		{
-			Children = {
-				new Label { HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, Text = "Welcome to .NET MAUI!"
-				}
-			}
-		};
-	}
+    [PrimaryKey, AutoIncrement]
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public double Calories { get; set; }
+    public double Protein { get; set; }
+    public double Sugar { get; set; }
 }

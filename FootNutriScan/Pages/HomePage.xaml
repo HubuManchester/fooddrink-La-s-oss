@@ -65,6 +65,41 @@
 
             </Frame>
 
+            <Frame
+                CornerRadius="20"
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}"
+                Padding="20">
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label
+                        Text="Your Location"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                        AutomationProperties.Name="Your current location" />
+
+                    <Label
+                        x:Name="LocationLabel"
+                        Text="Not available"
+                        FontSize="16"
+                        TextColor="{AppThemeBinding Light=Gray, Dark=LightGray}"
+                        AutomationProperties.Name="Location details" />
+
+                    <Button
+                        x:Name="RefreshLocationBtn"
+                        Text="Refresh Location"
+                        Clicked="OnRefreshLocationClicked"
+                        BackgroundColor="#2196F3"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="45"
+                        AutomationProperties.Name="Refresh location button" />
+
+                </VerticalStackLayout>
+
+            </Frame>
+
         </VerticalStackLayout>
 
     </ScrollView>

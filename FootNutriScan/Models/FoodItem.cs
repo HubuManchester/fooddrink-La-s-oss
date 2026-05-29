@@ -1,13 +1,18 @@
-using SQLite;
+using System.Text.Json.Serialization;
 
 namespace FootNutriScan.Models;
 
 public class FoodItem
 {
-    [PrimaryKey, AutoIncrement]
-    public int Id { get; set; }
+    [JsonPropertyName("name")]
     public string Name { get; set; }
-    public double Calories { get; set; }
+
+    [JsonPropertyName("calories")]
+    public int Calories { get; set; }
+
+    [JsonPropertyName("protein")]
     public double Protein { get; set; }
+
+    [JsonPropertyName("sugar")]
     public double Sugar { get; set; }
 }

@@ -26,11 +26,15 @@
                     <Entry
                         x:Name="FoodNameEntry"
                         Placeholder="e.g., Apple"
+                        TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                        PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}"
                         AutomationProperties.Name="Enter food name to add" />
                     <Entry
                         x:Name="CaloriesEntry"
                         Placeholder="Calories (kcal)"
                         Keyboard="Numeric"
+                        TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                        PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}"
                         AutomationProperties.Name="Enter calories" />
                     <Button
                         Text="Add to Plan"

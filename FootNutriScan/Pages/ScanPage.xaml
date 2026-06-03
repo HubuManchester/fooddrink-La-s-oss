@@ -7,67 +7,39 @@
     BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#1E1E1E}">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+        <VerticalStackLayout Padding="20" Spacing="16">
 
-            <Label
-                Text="Food Scanner"
-                FontSize="30"
-                FontAttributes="Bold"
-                TextColor="{AppThemeBinding Light=Black, Dark=White}"
-                AutomationProperties.Name="Food scanner title" />
+            <Label Text="Food Scanner"
+                   FontSize="26" FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}" />
 
-            <Button
-                Text="Take Photo"
-                Clicked="OnTakePhotoClicked"
-                BackgroundColor="#4CAF50"
-                TextColor="White"
-                HeightRequest="60"
-                CornerRadius="15"
-                AutomationProperties.Name="Take a photo of food" />
+            <Button Text="Take Photo" Clicked="OnTakePhotoClicked"
+                    BackgroundColor="#4CAF50" TextColor="White"
+                    HeightRequest="55" CornerRadius="12" />
+            <Button Text="Pick from Gallery" Clicked="OnPickPhotoClicked"
+                    BackgroundColor="#00BCD4" TextColor="White"
+                    HeightRequest="55" CornerRadius="12" />
 
-            <Button
-                Text="Pick from Gallery"
-                Clicked="OnPickPhotoClicked"
-                BackgroundColor="#2196F3"
-                TextColor="White"
-                HeightRequest="60"
-                CornerRadius="15"
-                AutomationProperties.Name="Pick a photo from gallery" />
-
-            <Frame
-                BackgroundColor="{AppThemeBinding Light=#EEEEEE, Dark=#333333}"
-                HeightRequest="300"
-                CornerRadius="20"
-                Padding="0">
-
-                <Image
-                    x:Name="CapturedImage"
-                    Aspect="AspectFit"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center" />
+            <Frame BackgroundColor="{AppThemeBinding Light=#EEEEEE, Dark=#333333}"
+                   HeightRequest="280" CornerRadius="16" Padding="0">
+                <Image x:Name="CapturedImage" Aspect="AspectFit"
+                       HorizontalOptions="Center" VerticalOptions="Center" />
             </Frame>
 
-            <Label
-                x:Name="PhotoStatusLabel"
-                Text="No photo taken yet."
-                HorizontalOptions="Center"
-                TextColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
+            <Label x:Name="PhotoStatusLabel" Text="No photo taken yet."
+                   HorizontalOptions="Center"
+                   TextColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
 
-            <Entry
-                x:Name="ManualFoodEntry"
-                Placeholder="Type food name shown in photo"
-                AutomationProperties.Name="Enter food name" />
+            <Entry x:Name="ManualFoodEntry" Placeholder="What food is in the photo?"
+                   AutomationProperties.Name="Enter food name" 
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                   PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}"
+                   />
 
-            <Button
-                Text="Look Up This Food"
-                Clicked="OnLookUpClicked"
-                BackgroundColor="#FF9800"
-                TextColor="White"
-                HeightRequest="50"
-                CornerRadius="15"
-                AutomationProperties.Name="Look up food information" />
+            <Button Text="Look Up Nutrition" Clicked="OnLookUpClicked"
+                    BackgroundColor="#FF9800" TextColor="White"
+                    HeightRequest="50" CornerRadius="12" />
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

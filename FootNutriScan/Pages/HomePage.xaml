@@ -7,101 +7,80 @@
     BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#1E1E1E}">
 
     <ScrollView>
-
         <VerticalStackLayout Padding="20" Spacing="20">
 
             <Label
                 Text="FootNutriScan"
-                FontSize="32"
+                FontSize="28"
                 FontAttributes="Bold"
                 TextColor="{AppThemeBinding Light=Black, Dark=White}"
-                AutomationProperties.Name="Application title, FootNutriScan" />
+                AutomationProperties.Name="Application title" />
 
-            <Frame
-                CornerRadius="20"
-                BackgroundColor="#4CAF50"
-                Padding="20">
-
+            <Frame CornerRadius="20" BackgroundColor="#4CAF50" Padding="20">
                 <VerticalStackLayout>
-
-                    <Label
-                        Text="Welcome Back!"
-                        FontSize="24"
-                        FontAttributes="Bold"
-                        TextColor="White"
-                        AutomationProperties.Name="Welcome message" />
-
-                    <Label
-                        Text="Track your nutrition easily."
-                        FontSize="16"
-                        TextColor="White" />
-
+                    <Label Text="Create Your Daily Nutrition Plan!"
+                           FontSize="22" FontAttributes="Bold"
+                           TextColor="White" />
+                    <Label Text="Set your goals and track your intake easily."
+                           FontSize="14" TextColor="#E0E0E0" />
                 </VerticalStackLayout>
-
             </Frame>
 
-            <Frame
-                CornerRadius="20"
-                BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}"
-                Padding="20">
+            <Frame CornerRadius="15" BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}" Padding="20">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Daily Goals" FontSize="18" FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
 
-                <VerticalStackLayout>
+                    <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="8">
+                        <Label Text="Calories (kcal)" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                        <Entry x:Name="TargetCaloriesEntry" Grid.Row="0" Grid.Column="1" Keyboard="Numeric"
+                               Placeholder="e.g., 2000" WidthRequest="120" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                               PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
 
-                    <Label
-                        Text="Today's Calories"
-                        FontSize="20"
-                        FontAttributes="Bold"
-                        TextColor="{AppThemeBinding Light=Black, Dark=White}"
-                        AutomationProperties.Name="Today's total calories" />
+                        <Label Text="Protein (g)" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                        <Entry x:Name="TargetProteinEntry" Grid.Row="1" Grid.Column="1" Keyboard="Numeric"
+                               Placeholder="e.g., 60" WidthRequest="120"
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                               PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}"/>
 
-                    <Label
-                        x:Name="CaloriesTodayLabel"
-                        Text="1450 kcal"
-                        FontSize="40"
-                        FontAttributes="Bold"
-                        TextColor="#4CAF50" />
+                        <Label Text="Sugar (g)" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                        <Entry x:Name="TargetSugarEntry" Grid.Row="2" Grid.Column="1" Keyboard="Numeric"
+                               Placeholder="e.g., 40" WidthRequest="120"
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                               PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}"/>
+                    </Grid>
 
+                    <Button Text="Save Goals" Clicked="OnSaveGoalsClicked"
+                            BackgroundColor="#00BCD4" TextColor="White"
+                            CornerRadius="10" HeightRequest="45" />
                 </VerticalStackLayout>
-
             </Frame>
 
-            <Frame
-                CornerRadius="20"
-                BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}"
-                Padding="20">
-
-                <VerticalStackLayout Spacing="10">
-
-                    <Label
-                        Text="Your Location"
-                        FontSize="20"
-                        FontAttributes="Bold"
-                        TextColor="{AppThemeBinding Light=Black, Dark=White}"
-                        AutomationProperties.Name="Your current location" />
-
-                    <Label
-                        x:Name="LocationLabel"
-                        Text="Not available"
-                        FontSize="16"
-                        TextColor="{AppThemeBinding Light=Gray, Dark=LightGray}"
-                        AutomationProperties.Name="Location details" />
-
-                    <Button
-                        x:Name="RefreshLocationBtn"
-                        Text="Refresh Location"
-                        Clicked="OnRefreshLocationClicked"
-                        BackgroundColor="#2196F3"
-                        TextColor="White"
-                        CornerRadius="10"
-                        HeightRequest="45"
-                        AutomationProperties.Name="Refresh location button" />
-
+            <Frame CornerRadius="15" BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}" Padding="20">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Today's Progress" FontSize="18" FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                    <Label x:Name="ProgressLabel" Text="No plan yet."
+                           FontSize="16" TextColor="{AppThemeBinding Light=Black, Dark=White}" />
                 </VerticalStackLayout>
+            </Frame>
 
+            <Frame CornerRadius="15" BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}" Padding="20">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Your Location" FontSize="18" FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                    <Label x:Name="LocationLabel" Text="Not available"
+                           FontSize="14" TextColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
+                    <Button x:Name="RefreshLocationBtn" Text="Refresh Location"
+                            Clicked="OnRefreshLocationClicked"
+                            BackgroundColor="#00BCD4" TextColor="White"
+                            CornerRadius="8" HeightRequest="40" />
+                </VerticalStackLayout>
             </Frame>
 
         </VerticalStackLayout>
-
     </ScrollView>
-
 </ContentPage>

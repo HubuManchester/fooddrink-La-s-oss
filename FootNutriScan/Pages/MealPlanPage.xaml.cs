@@ -41,6 +41,6 @@ public partial class MealPlanPage : ContentPage
 
 public class PlannedFood
 {
-    public string Name { get; set; } = string.Empty;   // ¸³Ä¬ÈÏÖµ
+    public string Name { get; set; } = string.Empty;
     public int Calories { get; set; }
 }

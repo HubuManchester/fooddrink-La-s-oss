@@ -112,4 +112,6 @@ public partial class ScanPage : ContentPage
             await DisplayAlert("Error", $"Could not retrieve data: {ex.Message}", "OK");
         }
     }
+
+    
 }

@@ -9,53 +9,18 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
 
-            <Label
-                Text="Settings"
-                FontSize="30"
-                FontAttributes="Bold"
-                TextColor="{AppThemeBinding Light=Black, Dark=White}"
-                AutomationProperties.Name="Settings title" />
+            <Label Text="Settings" FontSize="26" FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}" />
 
-            <Frame
-                BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}"
-                CornerRadius="15"
-                Padding="15">
+            <Frame CornerRadius="15" BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}" Padding="16">
                 <HorizontalStackLayout Spacing="20">
-                    <Label
-                        Text="Dark Mode"
-                        VerticalOptions="Center"
-                        TextColor="{AppThemeBinding Light=Black, Dark=White}"
-                        AutomationProperties.Name="Dark mode toggle" />
-                    <Switch
-                        x:Name="DarkModeSwitch"
-                        Toggled="OnDarkModeToggled"
-                        OnColor="#4CAF50" />
+                    <Label Text="Dark Mode" VerticalOptions="Center"
+                           TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+                    <Switch x:Name="DarkModeSwitch" Toggled="OnDarkModeToggled"
+                            OnColor="#4CAF50" />
                 </HorizontalStackLayout>
-            </Frame>
-
-            <Frame
-                BackgroundColor="{AppThemeBinding Light=White, Dark=#2A2A2A}"
-                CornerRadius="15"
-                Padding="15">
-                <VerticalStackLayout>
-                    <Label
-                        Text="Large Text (Simulated)"
-                        TextColor="{AppThemeBinding Light=Black, Dark=White}" />
-                    <Slider
-                        x:Name="FontSizeSlider"
-                        Minimum="14"
-                        Maximum="28"
-                        Value="18"
-                        AutomationProperties.Name="Adjust font size" />
-                    <Label
-                        x:Name="SampleTextLabel"
-                        Text="This is sample text"
-                        FontSize="18"
-                        TextColor="{AppThemeBinding Light=Black, Dark=White}" />
-                </VerticalStackLayout>
             </Frame>
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

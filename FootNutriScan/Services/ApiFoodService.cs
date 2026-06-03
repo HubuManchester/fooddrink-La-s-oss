@@ -26,4 +26,16 @@ public class ApiFoodService
         }
         return null;
     }
+
+    public async Task<List<FoodItem>> GetAllFoodsAsync()
+    {
+        try
+        {
+            return await _httpClient.GetFromJsonAsync<List<FoodItem>>(BaseUrl) ?? new();
+        }
+        catch
+        {
+            return new();
+        }
+    }
 }

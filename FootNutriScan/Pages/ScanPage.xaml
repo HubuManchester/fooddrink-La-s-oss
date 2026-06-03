@@ -23,9 +23,9 @@
             <Frame BackgroundColor="{AppThemeBinding Light=#EEEEEE, Dark=#333333}"
                    HeightRequest="280" CornerRadius="16" Padding="0">
                 <Image x:Name="CapturedImage" Aspect="AspectFit"
-                       HorizontalOptions="Center" VerticalOptions="Center" />
+                    HorizontalOptions="Fill" VerticalOptions="Fill" />
             </Frame>
-
+            
             <Label x:Name="PhotoStatusLabel" Text="No photo taken yet."
                    HorizontalOptions="Center"
                    TextColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />

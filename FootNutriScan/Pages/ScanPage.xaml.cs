@@ -1,4 +1,4 @@
-using FootNutriScan.Services;   
+using FootNutriScan.Services;
 
 namespace FootNutriScan.Pages;
 
@@ -49,6 +49,7 @@ public partial class ScanPage : ContentPage
         }
     }
 
+
     private async Task PickPhoto()
     {
         try
@@ -79,9 +80,18 @@ public partial class ScanPage : ContentPage
 
     private async Task LoadPhoto(FileResult file)
     {
-        var stream = await file.OpenReadAsync();
-        CapturedImage.Source = ImageSource.FromStream(() => stream);
-        PhotoStatusLabel.Text = "Photo loaded. You can look up a food.";
+        try
+        {
+            var bytes = await File.ReadAllBytesAsync(file.FullPath);
+
+            CapturedImage.Source = ImageSource.FromStream(() => new MemoryStream(bytes));
+
+            PhotoStatusLabel.Text = $"Picture is loaded. Enter the name of the food you want to search for";
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", ex.ToString(), "OK");
+        }
     }
 
     private async void OnLookUpClicked(object sender, EventArgs e)
@@ -113,5 +123,5 @@ public partial class ScanPage : ContentPage
         }
     }
 
-    
+
 }
